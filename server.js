@@ -4,11 +4,12 @@ const axios = require('axios');
 const path = require('path');
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../webapp')));
+app.use(express.static(path.join(__dirname, 'Trivia')));
 
 const port = 3000;
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../webapp/index.html')); });
+    res.sendFile(path.join(__dirname, 'Trivia', 'index.html'));
+});
 app.get('/api/general', async (req, res) => {
     try {
         const response = await axios.get(
